@@ -1,14 +1,15 @@
 package com.cg.banking.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -34,13 +35,23 @@ public class Admin implements Serializable{
 	private String transactionDescription;
 	
 	@Column(name="dateoftransfer")
-	private String DateOfTransaction;
+	private Date DateOfTransaction;
 	
 	@Column(name="transferamount")
 	private int transactionamount;
 
 	
 
+
+	
+
+	public Date getDateOfTransaction() {
+		return DateOfTransaction;
+	}
+
+	public void setDateOfTransaction(Date dateOfTransaction) {
+		DateOfTransaction = dateOfTransaction;
+	}
 
 	public int getTransactionId() {
 		return transactionId;
@@ -74,15 +85,6 @@ public class Admin implements Serializable{
 		this.transactionDescription = transactionDescription;
 	}
 
-	public String getDateOfTransaction() {
-		return DateOfTransaction;
-	}
-
-	public void setDateOfTransaction(String dateOfTransaction) {
-		DateOfTransaction = dateOfTransaction;
-	}
-
-
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -94,13 +96,13 @@ public class Admin implements Serializable{
 	}
 
 	public Admin(int transactionId, int accountNumber,
-			String transactionDescription, String dateOfTransaction,
+			String transactionDescription, Date dateOfTransaction,
 			int transactionamount) {
 		super();
 		this.transactionId = transactionId;
 		this.accountNumber = accountNumber;
 		this.transactionDescription = transactionDescription;
-		DateOfTransaction = dateOfTransaction;
+		this.DateOfTransaction = dateOfTransaction;
 		this.transactionamount = transactionamount;
 	}
 

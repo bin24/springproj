@@ -1,0 +1,21 @@
+*{
+	font-family:'Segoe UI';
+}
+
+table{
+	padding: 20px;
+	background-color:#81c0c0;
+		/* border-radius:4px 20px; */
+	
+}
+
+a{
+	align:center;
+}
+
+
+h2{
+	font-family:'Lucida Sans Unicode';
+	background-color: #ff8080;
+	color:black;
+}
